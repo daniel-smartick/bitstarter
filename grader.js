@@ -49,9 +49,9 @@ var loadChecks = function(checksfile) {
 var checkUrl = function(url, checksfile) {
 
    rest.get(url).on('complete', function(result){
-      if(result instanceof Error) {
-	  console.log("Error getting %s1: %s2", url, result);
-	  process.exit(1);
+       if(result instanceof Error) {
+	   console.log("Error getting %s1: %s2", url, result);
+	   process.exit(1);
        } else {
 	   var jsonCheck = checkHtmlContent(result, checksfile);
 	   printJsonResult(jsonCheck);
